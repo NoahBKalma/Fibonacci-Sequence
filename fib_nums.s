@@ -24,3 +24,10 @@ LOOP:
 	mov x0, x2		// EXIT SYSCALL, return last num to check
 	mov x8, #0x5D
 	svc #0
+
+WRITE:
+        mov x8, #0x40           // WRITE SYSCALL
+        mov x0, #1              // write mode
+        // REMINDER --------- must put the string in x1 and the buffer length in x2
+	svc #0
+        ret
