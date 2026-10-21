@@ -4,9 +4,9 @@
 
 _start:
 
-	mov x1, #0		// n-1
-	mov x2, #1		// n
-	mov x3, x2		// n	
+	mov x19, #0		// n-1
+	mov x20, #1		// n
+	mov x3, x20		// n	
 	mov x4, #0		// loop var
 LOOP:	
 	cmp x4, #8		// calculate numbers until the F9, the 10th number (base case 2 + #8)
@@ -14,14 +14,14 @@ LOOP:
 
 	add x4, x4, #1		// increment loop counter
 	
-	add x3, x2, x1		// calculate next fib number
-	mov x1, x2		// update addends
-	mov x2, x3		
+	add x3, x20, x19		// calculate next fib number
+	mov x19, x20		// update addends
+	mov x20, x3		
 	
 	b LOOP
 	
 1:
-	mov x0, x2		// EXIT SYSCALL, return last num to check
+	mov x0, x20		// EXIT SYSCALL, return last num to check
 	mov x8, #0x5D
 	svc #0
 
