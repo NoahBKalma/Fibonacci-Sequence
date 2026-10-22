@@ -17,7 +17,7 @@ _start:
 	svc #0
 
 CALC_LOOP:	
-	cmp x4, #15		// calculate numbers until F8
+	cmp x4, #15		// calculate numbers until Fn (15 in this case)
 	bge 1f
 
 	add x4, x4, #1		// increment loop counter
